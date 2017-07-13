@@ -1,7 +1,7 @@
 <template>
     <div id="index">
         <img src="../../assets/logo.png">
-        <h1>{{msg}}</h1>
+        <h1>{{msg}} {{version}}</h1>
         <h2>Essential Links</h2>
 
         <ul>
@@ -9,9 +9,6 @@
             <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
             <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
             <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-            <li>
-                <router-link to="/bar">Bar</router-link>
-            </li>
         </ul>
         <h2>Ecosystem</h2>
         <ul>
@@ -25,14 +22,23 @@
 
 
 <script>
-    import Vue from 'vue'
+    import Vue from 'vue';
+    import Api from '../../common/js/api';
     export default {
         name: 'index',
         data () {
             return {
-                msg: 'Welcome to Your Vue.js App'
+                msg: 'Welcome to Simple Vue Phalcon App',
+                version: '',
             }
         },
+        mounted: function () {
+            var that = this;
+            Api.post('/index/version', {key: 'val'}).then(res => {
+                console.log(res);
+                that.version = res.data.iv;
+            });
+        }
     }
 </script>
 

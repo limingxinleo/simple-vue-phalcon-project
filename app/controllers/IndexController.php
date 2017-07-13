@@ -19,7 +19,21 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
-        $this->view->version = (new System())->version();
         return $this->view->render('index', 'index');
+    }
+
+    public function versionAction()
+    {
+        $iv = (new System())->version();
+        $data = $this->request->get();
+        $headers = $this->request->getHeaders();
+        $json = $this->request->getJsonRawBody();
+        $result = [
+            'iv' => $iv,
+            'data' => $data,
+            'headers' => $headers,
+            'json' => $json,
+        ];
+        return self::success($result);
     }
 }
