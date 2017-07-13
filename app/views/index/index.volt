@@ -1,10 +1,11 @@
-{% extends "master.volt" %}
-{% block content %}
-    <h1>Congratulations!</h1>
-
-    <p>You're now flying with Phalcon. Great things are about to happen!</p>
-
-    <p>You're using limingxinleo\phalcon-project {{ version }}</p>
-
-    <p><img src="{{ static_url('app/images/logo.png') }}" alt=""></p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>test</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="/dist/build.js"></script>
+</body>
+</html>

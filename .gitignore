@@ -10,3 +10,9 @@ storage/log/*
 storage/cache/*
 storage/meta/*
 data
+
+.DS_Store
+node_modules/
+package-lock.json
+public/dist
+
