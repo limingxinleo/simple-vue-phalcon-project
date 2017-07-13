@@ -1,6 +1,10 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './app/router'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './app/router';
+import MintUI from 'mint-ui';
+import 'mint-ui/lib/style.css';
+
+Vue.use(MintUI);
 
 new Vue({
     el: '#app',
@@ -8,4 +12,4 @@ new Vue({
     // template: '<App/>',
     // components: {App},
     render: h => h(App)
-})
+});

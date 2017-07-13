@@ -9,7 +9,6 @@ Vue.use(VueRouter);
 
 // 1. 定义（路由）组件。
 // 可以从其他文件 import 进来
-const Foo = {template: '<div>foo</div>'}
 const Bar = {template: '<div>bar</div>'}
 
 // 2. 定义路由
@@ -18,7 +17,7 @@ const Bar = {template: '<div>bar</div>'}
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
-    {path: '/', component: Index}
+    {path: '/', component: Index},
 ];
 
 // 3. 创建 router 实例，然后传 `routes` 配置

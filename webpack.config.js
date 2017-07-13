@@ -29,6 +29,13 @@ module.exports = {
                 options: {
                     name: '[name].[ext]?[hash]'
                 }
+            },
+            {
+                test: /\.css$/,
+                loader: 'file-loader',
+                query: {
+                    name: '[name].[ext]'
+                }
             }
         ]
     },
