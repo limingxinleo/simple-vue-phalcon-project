@@ -22,6 +22,11 @@ class IndexController extends Controller
         return $this->view->render('index', 'index');
     }
 
+    public function adminAction()
+    {
+        return $this->view->render('index', 'admin');
+    }
+
     public function versionAction()
     {
         $iv = (new System())->version();
