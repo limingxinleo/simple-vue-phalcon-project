@@ -27,6 +27,7 @@
             return {
                 msg: 'Welcome to Simple Vue Phalcon App',
                 version: '',
+//                login_type: true,
             }
         },
         mounted: function () {
