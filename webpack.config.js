@@ -4,7 +4,7 @@ var webpack = require('webpack')
 module.exports = {
     entry: {
         client: './vue-source/client/main.js',
-        server: './vue-source/server/main.js',
+        admin: './vue-source/admin/main.js',
         build: './vue-source/src/main.js',
     },
     output: {
