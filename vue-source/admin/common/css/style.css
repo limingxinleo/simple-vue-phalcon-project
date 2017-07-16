@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+
+#app {
+    min-width: 1200px;
+    margin: 0 auto;
+    font-family: "Helvetica Neue", "PingFang SC", Arial, sans-serif;
+}
+
+#layout-sidebar {
+    min-height: 800px;
+}
+
+.container {
+    margin: 10px;
+}
