@@ -2,11 +2,15 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-    entry: './vue-source/src/main.js',
+    entry: {
+        client: './vue-source/client/main.js',
+        server: './vue-source/server/main.js',
+        build: './vue-source/src/main.js',
+    },
     output: {
         path: path.resolve(__dirname, './public/dist'),
         publicPath: '/dist/',
-        filename: 'build.js'
+        filename: '[name].js'
     },
     module: {
         rules: [
