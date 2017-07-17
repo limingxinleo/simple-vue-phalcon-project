@@ -1,5 +1,5 @@
 <template>
-    <div id="app" class="page">
+    <div id="app">
         <div class="weui-tab">
             <div class="weui-tab__panel">
                 <router-view></router-view>
@@ -10,6 +10,7 @@
 </template>
 <script>
     import Footer from './app/components/layout/Footer.vue';
+    import './common/css/style.css';
 
     export default {
         components: {
