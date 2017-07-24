@@ -5,15 +5,28 @@
 - [ ] php单元测试
 
 ### Added
+
+### Changed
+
+### Fixed
+
+## [1.9.8]
+### Checked
+- [x] php单元测试
+
+### Added
 * 扩展DB工具类
 * 增加工具类接口
 * 增加路由目录，路由可以使用多文件进行定义
+* 增加只修改某些字段的更新方法
 
 ### Changed
 * 重写逻辑层FromCache模块 并增加相应单元测试
+* 修改DB工具类继承LDB
 
 ### Fixed
 * 修改调度器不生效的BUG
+* Fix 服务容器不兼容php56的BUG
 
 ## [1.9.0]
 ### Checked
