@@ -26,7 +26,7 @@ return new Config(
         | This value is version for this project.
         |
         */
-        'version' => '1.9.4',
+        'version' => '1.9.8',
 
         /*
         |--------------------------------------------------------------------------
@@ -247,7 +247,7 @@ return new Config(
         */
         'services' => [
             'common' => [
-                'config' => App\Services\Config::class, // 系统配置
+                'config' => App\Services\ConfigService::class, // 系统配置
                 'app' => App\Services\App::class, // 自定义配置
                 'db' => App\Services\Db::class,
                 'modelsMetadata' => App\Services\ModelsMetadata::class,
@@ -259,6 +259,7 @@ return new Config(
                 'mongo' => App\Services\Mongo::class,
                 'cookies' => App\Services\Cookies::class,
                 'session' => App\Services\Session::class,
+                'modelsManager' => App\Services\ModelsManager::class,
             ],
             'cli' => [
                 'dispatcher' => App\Services\Cli\Dispatcher::class,
