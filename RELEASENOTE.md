@@ -5,10 +5,13 @@
 - [ ] php单元测试
 
 ### Added
+* 消息队列：增加子进程最大处理次数
 
 ### Changed
+* 重构Schedule定时服务
 
 ### Fixed
+* Fix 模型基类 找不到静态方法时不报错的BUG
 
 ## [1.9.8]
 ### Checked
