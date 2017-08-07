@@ -5,10 +5,26 @@
 - [ ] php单元测试
 
 ### Added
+
+### Changed
+* 删除打包脚本
+
+### Fixed
+
+## [1.9.15]
+### Checked
+- [x] php单元测试
+
+### Added
 * 消息队列：增加子进程最大处理次数
+* 增加Logger服务
+* 模型保存验证错误事件
 
 ### Changed
 * 重构Schedule定时服务
+* 删除dump调试方法
+* 重写Log工具类
+* 重构DB监听服务
 
 ### Fixed
 * Fix 模型基类 找不到静态方法时不报错的BUG
