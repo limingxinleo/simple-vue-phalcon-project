@@ -26,7 +26,7 @@ return new Config(
         | This value is version for this project.
         |
         */
-        'version' => '1.10.0',
+        'version' => '1.10.7',
 
         /*
         |--------------------------------------------------------------------------
@@ -92,8 +92,6 @@ return new Config(
             'persistent' => env('REDIS_PERSISTENT', false),
             'index' => env('REDIS_INDEX', 0),
             'prefix' => env('REDIS_PREFIX', ''),
-            // 是否开启Redis辅助类
-            'isUtils' => env('REDIS_IS_UTILS', false),
         ],
 
         /*
@@ -133,6 +131,7 @@ return new Config(
         'application' => [
             'configDir' => APP_PATH . '/config/',
             'controllersDir' => APP_PATH . '/controllers/',
+            'jobsDir' => APP_PATH . '/jobs/',
             'libraryDir' => APP_PATH . '/library/',
             'listenersDir' => APP_PATH . '/listeners/',
             'logicsDir' => APP_PATH . '/logics/',
@@ -235,6 +234,22 @@ return new Config(
         */
         'crypt' => [
             'key' => env('CRYPT_KEY', 'phalcon-project-cookie->key'),
+        ],
+
+        /*
+        |--------------------------------------------------------------------------
+        | QUEUE Environment
+        |--------------------------------------------------------------------------
+        |
+        | key: 消息队列的KEY键
+        | delayKey: 延时消息队列的KEY键
+        | errorKey: 失败的消息队列的KEY键
+        |
+        */
+        'queue' => [
+            'key' => env('QUEUE_KEY', 'phalcon:queue:default'),
+            'delayKey' => env('QUEUE_DELAY_KEY', 'phalcon:queue:delay'),
+            'errorKey' => env('QUEUE_ERROR_KEY', 'phalcon:queue:error'),
         ],
 
         /*

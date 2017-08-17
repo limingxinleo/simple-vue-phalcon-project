@@ -8,7 +8,6 @@
 // +----------------------------------------------------------------------
 namespace App\Services;
 
-use App\Utils\Log;
 use Phalcon\Config;
 use Phalcon\DI\FactoryDefault;
 
@@ -20,7 +19,7 @@ class Error implements ServiceProviderInterface
             register_shutdown_function(function () {
                 if ($e = error_get_last()) {
                     $log = $e['message'] . " in " . $e['file'] . ' line ' . $e['line'];
-                    logger($log, 'error', 'error.log');
+                    logger($log, 'error', 'error');
                 }
             });
         }
