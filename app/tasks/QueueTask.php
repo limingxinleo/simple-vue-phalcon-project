@@ -2,6 +2,7 @@
 
 namespace App\Tasks;
 
+use App\Jobs\Contract\JobInterface;
 use App\Tasks\System\Queue;
 use limx\phalcon\Cli\Color;
 use limx\phalcon\Redis;
@@ -9,6 +10,8 @@ use Exception;
 
 class QueueTask extends Queue
 {
+    public $description = '默认消息执行脚本';
+
     // 最大进程数
     protected $maxProcesses = 2;
 
@@ -28,7 +31,7 @@ class QueueTask extends Queue
     protected function redisClient()
     {
         $config = di('config')->redis;
-        return Redis::getInstance($config->host, $config->auth, $config->index, $config->port);
+        return Redis::getInstance($config->host, $config->auth, $config->index, $config->port, 'queue');
     }
 
     protected function redisChildClient()
@@ -41,7 +44,12 @@ class QueueTask extends Queue
     {
         try {
             $obj = unserialize($recv);
-            $obj->handle();
+            if ($obj instanceof JobInterface) {
+                $name = get_class($obj);
+                echo Color::colorize('Processing: ' . $name, Color::FG_GREEN) . PHP_EOL;
+                $obj->handle();
+                echo Color::colorize('Processed: ' . $name, Color::FG_GREEN) . PHP_EOL;
+            }
         } catch (Exception $ex) {
             $redis = static::redisChildClient();
             $redis->lpush($this->errorKey, $recv);
@@ -50,7 +58,7 @@ class QueueTask extends Queue
     }
 
     /**
-     * @desc 重载失败的Job
+     * @desc   重载失败的Job
      * @author limx
      */
     public function reloadErrorJobsAction()
@@ -63,7 +71,7 @@ class QueueTask extends Queue
     }
 
     /**
-     * @desc 删除所有失败的Job
+     * @desc   删除所有失败的Job
      * @author limx
      */
     public function flushErrorJobsAction()
