@@ -2,16 +2,49 @@
 
 ## [Unreleased]
 ### Checked
-- [ ] php单元测试
+- [x] php单元测试
+
+### Added
+* Swoole Socket增加用户组
+* Socket基类增加beforeServerStart方法
+
+### Changed
+
+### Fixed
+
+## [2.0.0]
+### Checked
+- [x] php单元测试
+
+### Added
+* 增加x-console-color依赖
+* 增加limingxinleo\support-str 依赖
+
+### Changed
+* 移动Queue Socket WebSocket 基类
+* 删除success & error 助手方法 ！！
+* 移除limingxinleo/phalcon-utils 依赖 ！！
+
+### Fixed
+* 修改定时脚本日志BUG
+
+## [1.11.4]
+### Checked
+- [x] php单元测试
 
 ### Added
 * 增加脚本描述字段
+* 错误捕获
+* 增加Swoole Socket
+* 增加x-phalcon-logger依赖
+* 增加x-phalcon-db依赖
+* 增加Validator基类
 
 ### Changed
 * 修改部分命名
 * 修改XConsole依赖版本
-
-### Fixed
+* 调整目录结构
+* 更换limx\phalcon\Redis为Xin\Redis
 
 ## [1.10.9]
 ### Checked
